@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Kies een afbeelding</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <div padding>
+    <button ion-button full (click)='pickImages();'>Kies afbeelding</button>
+  </div>
+  <ion-card text-center>
+    <img [src]="picked_image" />
+  </ion-card>
+
+  <div class="form-container" [hidden]="!has_picked_image">
+    <ion-list>
+      <ion-item>
+        <ion-label stacked>Titel</ion-label>
+        <ion-input type="text" [value]="caption" [(ngModel)]="caption"></ion-input>
+      </ion-item>
+    </ion-list>
+    <div padding>
+      <button ion-button full color="secondary" (click)='shareImage();'>Deel afbeelding</button>
+    </div>
+  </div>
+</ion-content>
